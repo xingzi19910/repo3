@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.it.mapper.UserMapper">
+
+    <!--
+    useGeneratedKeys 和 keyProperty 只在 insert 和update中有用
+    useGeneratedKeys:默认使用JDBC的 getGeneratedKeys 方法来获取数据库自动生成的主键,赋值给keyProperty定义的属性
+    keyProperty:定义接收数据的属性,一般接收的都是主键的值
+
+      -->
+<insert id="save" parameterType="user" useGeneratedKeys="true" keyProperty="id" >
+    insert into user value (#{id},#{name},#{gender},#{age},#{address},#{qq},#{email})
+</insert>
+
+</mapper>
